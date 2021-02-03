@@ -7,7 +7,8 @@
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="./ebg_ge_logo-01.svg" />
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<!--===============================================================================================-->
@@ -19,6 +20,15 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
 	<style>
+		#logo {
+			height: 200px;
+			width: 500px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			background-image: url("./o24_logo_mail-01.png");
+		}
+
 		@media (max-width: 1020px) {
 			.lg-header {
 				font-size: 2.5em;
@@ -33,16 +43,19 @@
 			}
 		}
 	</style>
-	
-	<script> 
-		window.addEventListener("load", ()=>{
+
+	<script>
+		window.addEventListener("load", () => {
 			const logo = document.getElementById("logo");
-			const ebgLogoURL ='./ebg_ge_logo-01.svg'; 
+			const ebgLogoURL = './ebg_ge_logo-01.svg';
 			const order24LogoURL = "./o24_logo_mail-01.png";
 
 			const isOrder24 = window.location.origin.indexOf("order24") !== -1;
 
-			logo.style.backgroundImage = `url(${isOrder24 ? order24LogoURL : ebgLogoURL})`;
+			if(isOrder24){
+				document.title = "Order24";
+				logo.style.backgroundImage = `url(${order24LogoURL})`;
+			}
 		})
 	</script>
 </head>
@@ -55,9 +68,7 @@
 	<div class="size1 overlay1" style="min-width: 800px;">
 		<!--  -->
 		<div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
-			<div id="logo"
-				style="height: 200px; width: 500px; background-repeat: no-repeat; background-position: center;">
-			</div>
+			<div id="logo"></div>
 
 			<h3 class="lg-header l1-txt1 txt-center p-b-25">
 				მიმდინარეობს ტექნიკური განახლება
